@@ -1,0 +1,10 @@
+// SHould throw linting errors
+
+body {
+  color: red; // To test if the styles are still compiled
+  @extend %test;
+}
+
+#should-be-allowed-by-sass-lint-test-config-yml {
+  color: green;
+}
