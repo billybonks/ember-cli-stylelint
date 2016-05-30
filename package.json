@@ -1,11 +1,8 @@
 {
   "name": "ember-cli-style-lint",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "StyleLint addon for ember applications.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/billybonks/ember-cli-style-lint.git"
-  },
+  "repository": "",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -13,15 +10,15 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember try:testall"
+    "test": "mocha tests/runner"
   },
-  "repository": "",
   "engines": {
     "node": ">= 0.10.0"
   },
   "author": "billybonks",
   "license": "MIT",
   "devDependencies": {
+    "broccoli": "^0.16.9",
     "broccoli-asset-rev": "^2.2.0",
     "chai": "^3.5.0",
     "ember-cli": "1.13.13",
@@ -58,7 +55,7 @@
   ],
   "dependencies": {
     "broccoli-funnel": "^1.0.1",
-    "broccoli-style-lint": "^0.1.3",
+    "broccoli-style-lint": "0.1.4",
     "ember-cli-babel": "^5.1.5"
   },
   "ember-addon": {
