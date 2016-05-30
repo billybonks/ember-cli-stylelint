@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "block-no-empty": true,
+    "color-no-invalid-hex": true,
+    "declaration-colon-space-after": "always",
+    "max-empty-lines": 2,
+    "unit-whitelist": ["em", "rem", "%", "s"],
+    "color-named": "always-where-possible"
+  }
+}
