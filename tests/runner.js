@@ -13,7 +13,6 @@ function buildAndLint(sourcePath) {
     options: {
       styleLint:{
         onError: function(results) {
-          console.log(results)
           errors.push(results);
         },
         generateTests:true
@@ -34,7 +33,6 @@ function buildAndLint(sourcePath) {
 }
 
 describe('ember-cli-style-lint', function() {
-  console.log('making tests')
   beforeEach(function() {
     errors = [];
   });
@@ -46,10 +44,8 @@ describe('ember-cli-style-lint', function() {
   });
 
   it('The linter should run', function() {
-    console.log('running test');
     return buildAndLint('tests/dummy').then(function() {
       var firstError = errors[0];
-      var messageIdStrings;
 
       assert.ok(!!firstError,
         'The linting should occur');
@@ -57,7 +53,7 @@ describe('ember-cli-style-lint', function() {
       assert.equal(firstError.source, 'app/styles/app.scss',
         'The app.scss file should be linted');
 
-      assert.ok(firstError.warnings.length == 2,
+      assert.ok(firstError.warnings.length === 2,
         'Found correct amount of errors');
     });
   });
