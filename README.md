@@ -1,26 +1,59 @@
 # Ember-cli-style-lint
 
-This README outlines the details of collaborating on this Ember addon.
+An Ember-CLI addon that allows easy integration with [stylelint](http://stylelint.io/)
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+`ember install ember-cli-sass-lint`
 
-## Running
+##Configuration
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+Linting configuration can be added in a
+* a stylelint property in package.json
+* a .stylelintrc file
+* a stylelint.config.js file exporting a JS object
+
+as required by [stylelint](http://stylelint.io/user-guide/configuration/).
+
+the parent key is `styleLint`
+
+## Options
+
+`linterConfig` {Object}
+
+Hash as specified by [style-lint](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/node-api.md)
+
+doesn't accept `files` option
+
+`onError` {function}
+
+A hook that allows you to do whatever you want
+
+`testFailingFiles` {boolean}
+
+If true it will generate a unit test if the file fails lint.
+
+`testPassingFiles` {boolean}
+
+If true it  will generate a unit test if the passes fails lint.
+
+`generateTests` {boolean}
+
+If true it will generate tests for both passing and failing tests, overrides the testPassingFiles and testFailingFiles
+
+`disableConsoleLogging` {boolean}
+
+If true it will disable logging of errors to console
 
 ## Running Tests
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+* `npm test`
 
-## Building
+## Development
 
-* `ember build`
+All tests are currently contained in tests/runner.js. This uses Mocha/Chai, not Ember Testing. Tests can be run with:
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+npm test
+You should also check that the dummy app's styles are still correctly compiled by running the ember app using ember s.
+
+PRs are welcomed and should be issued to the master branch.
