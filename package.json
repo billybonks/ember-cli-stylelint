@@ -2,7 +2,10 @@
   "name": "ember-cli-style-lint",
   "version": "0.1.2",
   "description": "StyleLint addon for ember applications.",
-  "repository": "",
+  "repository": {
+    "type":"git",
+    "url":"https://github.com/billybonks/ember-cli-style-lint.git"
+  },
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -15,7 +18,11 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "billybonks",
+  "author": {
+    "name":"billybonks",
+    "email":"sebastienstettler@gmail.com",
+    "website":"www.unearthing.io"
+  },
   "license": "MIT",
   "devDependencies": {
     "broccoli": "^0.16.9",
