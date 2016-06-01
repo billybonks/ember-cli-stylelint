@@ -1,3 +1,10 @@
+
+![dependencies](https://img.shields.io/david/billybonks/ember-cli-style-lint.svg)
+![ember-observer](http://emberobserver.com/badges/ember-cli-style-lint.svg)
+![downloads](https://img.shields.io/npm/dm/ember-cli-style-lint.svg)
+
+
+
 # Ember-cli-style-lint
 
 An Ember-CLI addon that allows easy integration with [stylelint](http://stylelint.io/)
