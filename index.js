@@ -2,7 +2,7 @@
 'use strict';
 
 var StyleLinter = require('broccoli-style-lint');
-var Funnel = require('broccoli-Funnel');
+var Funnel = require('broccoli-funnel');
 
 module.exports = {
   name: 'ember-cli-style-lint',
