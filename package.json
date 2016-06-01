@@ -3,8 +3,8 @@
   "version": "0.1.2",
   "description": "StyleLint addon for ember applications.",
   "repository": {
-    "type":"git",
-    "url":"https://github.com/billybonks/ember-cli-style-lint.git"
+    "type": "git",
+    "url": "https://github.com/billybonks/ember-cli-style-lint.git"
   },
   "directories": {
     "doc": "doc",
@@ -19,9 +19,9 @@
     "node": ">= 0.10.0"
   },
   "author": {
-    "name":"billybonks",
-    "email":"sebastienstettler@gmail.com",
-    "website":"www.unearthing.io"
+    "name": "billybonks",
+    "email": "sebastienstettler@gmail.com",
+    "website": "www.unearthing.io"
   },
   "license": "MIT",
   "devDependencies": {
@@ -44,7 +44,8 @@
     "ember-disable-prototype-extensions": "^1.0.0",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
-    "ember-try": "~0.0.8"
+    "ember-try": "~0.0.8",
+    "mocha": "^2.5.3"
   },
   "keywords": [
     "ember-addon",
