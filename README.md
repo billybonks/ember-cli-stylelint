@@ -11,7 +11,7 @@ An Ember-CLI addon that allows easy integration with [stylelint](http://stylelin
 
 ## Installation
 
-`ember install ember-cli-sass-lint`
+`ember install ember-cli-style-lint`
 
 ##Configuration
 
