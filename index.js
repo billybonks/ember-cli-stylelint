@@ -18,9 +18,7 @@ module.exports = {
 
   lintTree: function(type, tree) {
     if (type === 'app') {
-      return new Funnel(new StyleLinter(this.app.trees.styles, this.styleLintOptions), {
-        srcDir:'tests',
-      });
+      return new StyleLinter(this.app.trees.styles, this.styleLintOptions);
     } else {
       return tree;
     }
