@@ -1,5 +1,5 @@
 {
-  "name": "ember-cli-style-lint",
+  "name": "ember-cli-stylelint",
   "dependencies": {
     "ember": "1.13.11",
     "ember-cli-shims": "0.0.6",

@@ -1,10 +1,10 @@
 {
-  "name": "ember-cli-style-lint",
+  "name": "ember-cli-stylelint",
   "version": "0.1.4",
   "description": "StyleLint addon for ember applications.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/billybonks/ember-cli-style-lint.git"
+    "url": "https://github.com/billybonks/ember-cli-stylelint.git"
   },
   "directories": {
     "doc": "doc",
@@ -63,7 +63,7 @@
   ],
   "dependencies": {
     "broccoli-funnel": "^1.0.1",
-    "broccoli-style-lint": "^0.3.0",
+    "broccoli-stylelint": "^0.3.0",
     "ember-cli-babel": "^5.1.5"
   },
   "ember-addon": {

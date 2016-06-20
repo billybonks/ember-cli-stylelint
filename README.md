@@ -1,17 +1,17 @@
 
-![dependencies](https://img.shields.io/david/billybonks/ember-cli-style-lint.svg)
-![ember-observer](http://emberobserver.com/badges/ember-cli-style-lint.svg)
-![downloads](https://img.shields.io/npm/dm/ember-cli-style-lint.svg)
+![dependencies](https://img.shields.io/david/billybonks/ember-cli-stylelint.svg)
+![ember-observer](http://emberobserver.com/badges/ember-cli-stylelint.svg)
+![downloads](https://img.shields.io/npm/dm/ember-cli-stylelint.svg)
 
 
 
-# Ember-cli-style-lint
+# Ember-cli-stylelint
 
 An Ember-CLI addon that allows easy integration with [stylelint](http://stylelint.io/)
 
 ## Installation
 
-`ember install ember-cli-style-lint`
+`ember install ember-cli-stylelint`
 
 ##Configuration
 
@@ -28,7 +28,7 @@ the parent key is `styleLint`
 
 `linterConfig` {Object}
 
-Hash as specified by [style-lint](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/node-api.md)
+Hash as specified by [stylelint](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/node-api.md)
 
 doesn't accept `files` option
 

@@ -32,7 +32,7 @@ function buildAndLint(sourcePath) {
   return builder.build();
 }
 
-describe('ember-cli-style-lint', function() {
+describe('ember-cli-stylelint', function() {
   beforeEach(function() {
     errors = [];
   });

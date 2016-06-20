@@ -1,11 +1,11 @@
 /* jshint node: true */
 'use strict';
 
-var StyleLinter = require('broccoli-style-lint');
+var StyleLinter = require('broccoli-stylelint');
 var Funnel = require('broccoli-funnel');
 
 module.exports = {
-  name: 'ember-cli-style-lint',
+  name: 'ember-cli-stylelint',
 
   included: function(app) {
     if (!app.isTestingStyleLintAddon) {
