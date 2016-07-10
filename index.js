@@ -2,7 +2,6 @@
 'use strict';
 
 var StyleLinter = require('broccoli-stylelint');
-var Funnel = require('broccoli-funnel');
 
 module.exports = {
   name: 'ember-cli-stylelint',
@@ -17,7 +16,31 @@ module.exports = {
   },
 
   lintTree: function(type, tree) {
+    let project = this.project;
+
     if (type === 'app') {
+      this.styleLintOptions.testGenerator =  function(relativePath, errors) {
+        let passed = null;
+        let name = `${relativePath} should pass style lint`;
+        if (errors) {
+          passed = false;
+          let assertions = [name];
+          for(var i = 0; i < errors.warnings.length; i++){
+            var warning = errors.warnings[i];
+            assertions.push(this.escapeErrorString(`line: ${warning.line}, col: ${warning.column}, ${warning.text}.`));
+          }
+          errors = assertions.join('\\n');
+        } else {
+          passed = true;
+          errors = "";
+        }
+
+        return project.generateTestFile(' Style Lint ', [{
+          name: name,
+          passed: !!passed,
+          errorMessage: errors
+        }]);
+      };
       return new StyleLinter(this.app.trees.styles, this.styleLintOptions);
     } else {
       return tree;

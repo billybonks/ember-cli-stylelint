@@ -63,7 +63,7 @@
   ],
   "dependencies": {
     "broccoli-funnel": "^1.0.1",
-    "broccoli-stylelint": "^0.3.0"
+    "broccoli-stylelint": "^0.4.1"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
