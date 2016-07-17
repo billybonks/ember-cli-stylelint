@@ -16,18 +16,18 @@ module.exports = {
   },
 
   lintTree: function(type, tree) {
-    let project = this.project;
+    var project = this.project;
 
     if (type === 'app') {
       this.styleLintOptions.testGenerator =  function(relativePath, errors) {
-        let passed = null;
-        let name = `${relativePath} should pass style lint`;
+        var passed = null;
+        var name = relativePath+' should pass style lint';
         if (errors) {
           passed = false;
-          let assertions = [name];
+          var assertions = [name];
           for(var i = 0; i < errors.warnings.length; i++){
             var warning = errors.warnings[i];
-            assertions.push(this.escapeErrorString(`line: ${warning.line}, col: ${warning.column}, ${warning.text}.`));
+            assertions.push(this.escapeErrorString('line: '+warning.line+', col: '+warning.column+' '+warning.text+'.'));
           }
           errors = assertions.join('\\n');
         } else {
