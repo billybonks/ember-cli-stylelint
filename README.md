@@ -2,7 +2,7 @@
 ![dependencies](https://img.shields.io/david/billybonks/ember-cli-stylelint.svg)
 ![ember-observer](http://emberobserver.com/badges/ember-cli-stylelint.svg)
 ![downloads](https://img.shields.io/npm/dm/ember-cli-stylelint.svg)
-
+![build](https://travis-ci.org/billybonks/ember-cli-stylelint.svg?branch=master)
 
 
 # Ember-cli-stylelint
