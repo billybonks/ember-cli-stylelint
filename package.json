@@ -45,7 +45,7 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
     "ember-try": "~0.0.8",
-    "mocha": "^2.5.3"
+    "mocha": "^3.0.1"
   },
   "keywords": [
     "ember-addon",
