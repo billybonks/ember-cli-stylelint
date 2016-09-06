@@ -63,7 +63,7 @@
   ],
   "dependencies": {
     "broccoli-funnel": "^1.0.1",
-    "broccoli-stylelint": "^0.6.0",
+    "broccoli-stylelint": "^0.7.0",
     "ember-cli-babel": "^5.1.5"
   },
   "ember-addon": {
