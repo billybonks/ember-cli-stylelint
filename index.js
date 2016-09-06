@@ -11,6 +11,10 @@ module.exports = {
       this._super.included(app);
     }
 
+    //setup for testing
+    this.project = {
+      generateTestFile:function(){}
+    }
     this.app = app;
     this.styleLintOptions = app.options.styleLint || {generateTests:true};
   },
