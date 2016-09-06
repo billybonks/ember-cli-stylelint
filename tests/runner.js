@@ -19,7 +19,7 @@ function buildAndLint(sourcePath) {
       }
     },
     trees: {
-      styles: sourcePath, // Directory to lint
+      app: sourcePath, // Directory to lint
     },
   });
 
