@@ -41,7 +41,7 @@ module.exports = {
           errorMessage: errors
         }]);
       };
-      return new StyleLinter(this.app.trees.styles, this.styleLintOptions);
+      return new StyleLinter(this.app.trees.app, this.styleLintOptions);
     } else {
       return tree;
     }
