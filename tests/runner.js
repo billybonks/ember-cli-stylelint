@@ -15,12 +15,13 @@ function buildAndLint(sourcePath) {
         onError: function(results) {
           errors.push(results);
         },
-        generateTests:true
+        generateTests:true,
+        console:console
       }
     },
     trees: {
-      styles: sourcePath, // Directory to lint
-    },
+      app: sourcePath, // Directory to lint
+    }
   });
 
   var node = linter.lintTree('app', {

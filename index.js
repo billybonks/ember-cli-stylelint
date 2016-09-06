@@ -11,6 +11,10 @@ module.exports = {
       this._super.included(app);
     }
 
+    //setup for testing
+    this.project = {
+      generateTestFile:function(){}
+    }
     this.app = app;
     this.styleLintOptions = app.options.styleLint || {generateTests:true};
   },
@@ -41,7 +45,7 @@ module.exports = {
           errorMessage: errors
         }]);
       };
-      return new StyleLinter(this.app.trees.styles, this.styleLintOptions);
+      return new StyleLinter(this.app.trees.app, this.styleLintOptions);
     } else {
       return tree;
     }
