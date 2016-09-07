@@ -7,16 +7,20 @@ module.exports = {
   name: 'ember-cli-stylelint',
 
   included: function(app) {
+    //shared
+    this.styleLintOptions = app.options.styleLint || {generateTests:true};
+    this.styleLintOptions.console = console;
+
+    //used in real app
     if (!app.isTestingStyleLintAddon) {
       this._super.included(app);
     }
-
-    //setup for testing
-    this.project = {
-      generateTestFile:function(){}
-    }
+    
+    //Testing only
     this.app = app;
-    this.styleLintOptions = app.options.styleLint || {generateTests:true};
+    this.project = {
+      generateTestFile: function(){}
+    }
   },
 
   lintTree: function(type, tree) {
