@@ -11,16 +11,17 @@ module.exports = {
     this.styleLintOptions = app.options.styleLint || {generateTests:true};
     this.styleLintOptions.console = console;
 
-    //used in real app
+    //used in real app only
     if (!app.isTestingStyleLintAddon) {
       this._super.included(app);
+    } else {
+      //Testing only
+      this.project = {
+        generateTestFile: function(){}
+      }
     }
-    
-    //Testing only
+
     this.app = app;
-    this.project = {
-      generateTestFile: function(){}
-    }
   },
 
   lintTree: function(type, tree) {
