@@ -11,11 +11,10 @@ function buildAndLint(sourcePath) {
   linter.included({
     isTestingStyleLintAddon: true,
     options: {
-      styleLint:{
+      stylelint:{
         onError: function(results) {
           errors.push(results);
         },
-        generateTests:true,
         console:console
       }
     },

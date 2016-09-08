@@ -8,7 +8,7 @@ module.exports = {
 
   included: function(app) {
     //shared
-    this.styleLintOptions = app.options.styleLint || {generateTests:true};
+    this.styleLintOptions = app.options.stylelint || {};
     this.styleLintOptions.console = console;
 
     //used in real app only
