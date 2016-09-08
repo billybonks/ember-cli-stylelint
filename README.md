@@ -13,6 +13,25 @@ An Ember-CLI addon that allows easy integration with [stylelint](http://stylelin
 
 `ember install ember-cli-stylelint`
 
+##Syntax
+By default syntax is `scss`, if you want to use another one you need to configure the option in your `ember-cli-build`
+
+```javascript
+var app = new EmberApp(defaults, {
+  stylelint: {
+    linterConfig:{
+      syntax: 'less'
+    },
+  }
+});
+```
+
+You can use one of the following values for `syntax`
+- scss
+- css
+- less
+- sugarss
+
 ##Configuration
 
 Linting configuration can be added in a
