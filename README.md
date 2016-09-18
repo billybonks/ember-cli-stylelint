@@ -55,6 +55,10 @@ doesn't accept `files` option
 
 A hook that allows you to do whatever you want
 
+`consoleLogger` {function}
+
+This function is called every time a file has an error. It allows you to generate custom error output according to your preferences.
+
 `testFailingFiles` {boolean}
 
 If true it will generate a unit test if the file fails lint.
