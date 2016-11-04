@@ -53,7 +53,7 @@
     "css-lint"
   ],
   "dependencies": {
-    "broccoli-funnel": "^1.0.1",
+    "broccoli-funnel": "^1.0.9",
     "broccoli-stylelint": "^0.8.3",
     "ember-cli-babel": "^5.1.6"
   },
