@@ -54,7 +54,7 @@
   ],
   "dependencies": {
     "broccoli-funnel": "1.0.1",
-    "broccoli-stylelint": "0.8.3",
+    "broccoli-stylelint": "0.8.4",
     "ember-cli-babel": "5.1.6"
   },
   "ember-addon": {
