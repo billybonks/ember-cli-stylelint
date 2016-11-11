@@ -50,6 +50,7 @@ module.exports = {
           errorMessage: errors
         }]);
       };
+      console.log(this.app.trees.app)
       return new StyleLinter(this.app.trees.app, this.styleLintOptions);
     } else {
       return tree;
