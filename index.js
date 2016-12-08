@@ -1,6 +1,7 @@
 /* jshint node: true */
 'use strict';
 
+var mergeTrees = require('broccoli-merge-trees');
 var StyleLinter = require('broccoli-stylelint');
 
 module.exports = {
@@ -50,7 +51,17 @@ module.exports = {
           errorMessage: errors
         }]);
       };
-      return new StyleLinter(this.app.trees.app, this.styleLintOptions);
+
+      var toBeLinted = [ this.app.trees.app ];
+      if (this.styleLintOptions.includePaths) {
+        toBeLinted.push.apply(toBeLinted, this.styleLintOptions.includePaths);
+      }
+
+      var linted = toBeLinted.map(function(tree) {
+        return new StyleLinter(tree, this.styleLintOptions);
+      }, this);
+
+      return mergeTrees(linted);
     } else {
       return tree;
     }

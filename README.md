@@ -75,6 +75,12 @@ If true it will generate tests for both passing and failing tests, overrides the
 
 If true it will disable logging of errors to console
 
+`includePaths` {array of strings}
+
+Paths representing trees to lint. The app tree itself will always be included.
+In an addon, that path is `tests/dummy/app/styles/` (by default). Addon authors
+can set `includePaths: [ 'app/styles' ]` to also lint styles in `app/styles/`.
+
 ## Running Tests
 
 * `npm test`
