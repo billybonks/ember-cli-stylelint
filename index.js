@@ -3,6 +3,7 @@
 
 var mergeTrees = require('broccoli-merge-trees');
 var StyleLinter = require('broccoli-stylelint');
+var deepcopy = require('deepcopy');
 
 module.exports = {
   name: 'ember-cli-stylelint',
@@ -58,7 +59,8 @@ module.exports = {
       }
 
       var linted = toBeLinted.map(function(tree) {
-        return new StyleLinter(tree, this.styleLintOptions);
+        // copy options because StyleLinter mutates them
+        return new StyleLinter(tree, deepcopy(this.styleLintOptions));
       }, this);
 
       return mergeTrees(linted);
