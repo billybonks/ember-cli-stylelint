@@ -29,7 +29,7 @@ module.exports = {
     var project = this.project;
 
     if (type === 'app') {
-      this.styleLintOptions.testGenerator =  function(relativePath, errors) {
+      this.styleLintOptions.testGenerator = function(relativePath, errors) {
         var passed = null;
         var name = relativePath+' should pass style lint';
         if (errors) {
@@ -52,9 +52,18 @@ module.exports = {
         }]);
       };
 
-      var toBeLinted = [ this.app.trees.app ];
+      var toBeLinted = [];
+
+      if (this.styleLintOptions.includeAppTree !== false) {
+        toBeLinted.push(this.app.trees.app);
+      }
+
       if (this.styleLintOptions.includePaths) {
         toBeLinted.push.apply(toBeLinted, this.styleLintOptions.includePaths);
+      }
+
+      if (toBeLinted.length === 0) {
+        console.warn('No paths to lint, try setting includePaths.');
       }
 
       var linted = toBeLinted.map(function(tree) {

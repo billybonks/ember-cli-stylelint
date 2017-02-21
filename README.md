@@ -81,6 +81,10 @@ Paths representing trees to lint. The app tree itself will always be included.
 In an addon, that path is `tests/dummy/app/styles/` (by default). Addon authors
 can set `includePaths: [ 'app/styles' ]` to also lint styles in `app/styles/`.
 
+`includeAppTree` {boolean}
+
+If false it will not automatically include the app tree. Make sure you add paths to `includePaths` if you set this to false.
+
 ## Running Tests
 
 * `npm test`
