@@ -52,7 +52,12 @@ module.exports = {
         }]);
       };
 
-      var toBeLinted = [ this.app.trees.app ];
+      var toBeLinted = [];
+
+      if (this.styleLintOptions.includeAppTree !== false) {
+        toBeLinted.push(this.app.trees.app);
+      }
+
       if (this.styleLintOptions.includePaths) {
         toBeLinted.push.apply(toBeLinted, this.styleLintOptions.includePaths);
       }
