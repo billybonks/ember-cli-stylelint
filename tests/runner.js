@@ -67,7 +67,7 @@ describe('ember-cli-stylelint', function() {
     });
   });
 
-  it('should not include app tree by default if includeAppTree is false', function() {
+  it('The app tree is excluded if includeAppTree is false', function() {
     var options = {
       includeAppTree: false,
       includePaths: [ 'tests/dummy/app/styles/some_module' ]

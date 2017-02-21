@@ -29,7 +29,7 @@ module.exports = {
     var project = this.project;
 
     if (type === 'app') {
-      this.styleLintOptions.testGenerator =  function(relativePath, errors) {
+      this.styleLintOptions.testGenerator = function(relativePath, errors) {
         var passed = null;
         var name = relativePath+' should pass style lint';
         if (errors) {
@@ -63,7 +63,7 @@ module.exports = {
       }
 
       if (toBeLinted.length === 0) {
-        console.warn('No paths to lint, ensure includePaths is set if includeAppTree is false.');
+        console.warn('No paths to lint, try setting includePaths.');
       }
 
       var linted = toBeLinted.map(function(tree) {
