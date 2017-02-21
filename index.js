@@ -62,6 +62,10 @@ module.exports = {
         toBeLinted.push.apply(toBeLinted, this.styleLintOptions.includePaths);
       }
 
+      if (toBeLinted.length === 0) {
+        console.warn('No paths to lint, ensure includePaths is set if includeAppTree is false.');
+      }
+
       var linted = toBeLinted.map(function(tree) {
         return new StyleLinter(tree, this.styleLintOptions);
       }, this);
