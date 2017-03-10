@@ -8,20 +8,25 @@ var assert = chai.assert;
 var builder, errors;
 
 function buildAndLint(sourcePath) {
-  linter.included({
-    isTestingStyleLintAddon: true,
-    options: {
-      stylelint:{
-        onError: function(results) {
-          errors.push(results);
-        },
-        console:console
+  //stub _findHost
+  linter._findHost = function(){
+    return {
+      isTestingStyleLintAddon: true,
+      options: {
+        stylelint:{
+          onError: function(results) {
+            errors.push(results);
+          },
+          console:console
+        }
+      },
+      trees: {
+        app: sourcePath, // Directory to lint
       }
-    },
-    trees: {
-      app: sourcePath, // Directory to lint
     }
-  });
+  }
+
+  linter.included();
 
   var node = linter.lintTree('app', {
     tree: sourcePath
