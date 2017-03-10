@@ -7,8 +7,23 @@ var StyleLinter = require('broccoli-stylelint');
 module.exports = {
   name: 'ember-cli-stylelint',
 
-  included: function(app) {
+  included: function() {
     //shared
+    //guard see https://github.com/ember-cli/ember-cli/issues/3718
+    var app;
+
+    // If the addon has the _findHost() method (in ember-cli >= 2.7.0), we'll just
+    // use that.
+    if (typeof this._findHost === 'function') {
+     app = this._findHost();
+    } else {
+     // Otherwise, we'll use this implementation borrowed from the _findHost()
+     // method in ember-cli.
+     var current = this;
+     do {
+       app = current.app || app;
+     } while (current.parent.parent && (current = current.parent));
+    }
     this.styleLintOptions = app.options.stylelint || {};
     this.styleLintOptions.console = console;
 
