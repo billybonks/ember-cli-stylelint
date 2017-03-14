@@ -1,6 +1,10 @@
 module.exports = {
-  description: "installs a default .stylintrc",
+  description: 'creates a default .stylintrc',
   normalizeEntityName: function() {
-    return "";
+    return '';
+  },
+
+  afterInstall: function() {
+    return this.addPackageToProject('stylelint-config-standard', 'latest');
   }
 };
