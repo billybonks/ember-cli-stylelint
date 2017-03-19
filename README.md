@@ -5,7 +5,7 @@
 [![build](https://travis-ci.org/billybonks/ember-cli-stylelint.svg?branch=master)](https://travis-ci.org/billybonks/ember-cli-stylelint/branches)
 
 
-# Ember-cli-stylelint
+# ember-cli-stylelint
 
 An Ember-CLI addon that allows easy integration with [stylelint](http://stylelint.io/)
 
@@ -13,7 +13,7 @@ An Ember-CLI addon that allows easy integration with [stylelint](http://stylelin
 
 `ember install ember-cli-stylelint`
 
-##Syntax
+## Syntax
 By default syntax is `scss`, if you want to use another one you need to configure the option in your `ember-cli-build`
 
 ```javascript
@@ -32,9 +32,10 @@ You can use one of the following values for `syntax`
 - less
 - sugarss
 
-##Configuration
+## Configuration
 
 Linting configuration can be added in a
+
 * a stylelint property in package.json
 * a .stylelintrc file
 * a stylelint.config.js file exporting a JS object
