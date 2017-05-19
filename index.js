@@ -7,78 +7,48 @@ var StyleLinter = require('broccoli-stylelint');
 module.exports = {
   name: 'ember-cli-stylelint',
 
-  included: function() {
-    //shared
-    //guard see https://github.com/ember-cli/ember-cli/issues/3718
-    var app;
-
-    // If the addon has the _findHost() method (in ember-cli >= 2.7.0), we'll just
-    // use that.
-    if (typeof this._findHost === 'function') {
-     app = this._findHost();
-    } else {
-     // Otherwise, we'll use this implementation borrowed from the _findHost()
-     // method in ember-cli.
-     var current = this;
-     do {
-       app = current.app || app;
-     } while (current.parent.parent && (current = current.parent));
-    }
+  included: function(app) {
     this.styleLintOptions = app.options.stylelint || {};
     this.styleLintOptions.console = console;
-
-    //used in real app only
-    if (!app.isTestingStyleLintAddon) {
-      this._super.included(app);
-    } else {
-      //Testing only
-      this.project = {
-        generateTestFile: function(){}
-      }
-    }
-
-    this.app = app;
   },
 
   lintTree: function(type, tree) {
     var project = this.project;
+    if (type === 'templates') {
+      return undefined;
+    }
 
-    if (type === 'app') {
-      this.styleLintOptions.testGenerator =  function(relativePath, errors) {
-        var passed = null;
-        var name = relativePath+' should pass style lint';
-        if (errors) {
-          passed = false;
-          var assertions = [name];
-          for(var i = 0; i < errors.warnings.length; i++){
-            var warning = errors.warnings[i];
-            assertions.push(this.escapeErrorString('line: '+warning.line+', col: '+warning.column+' '+warning.text+'.'));
-          }
-          errors = assertions.join('\\n');
-        } else {
-          passed = true;
-          errors = "";
+    this.styleLintOptions.testGenerator =  function(relativePath, errors) {
+      var passed = null;
+      var name = relativePath+' should pass style lint';
+      if (errors) {
+        passed = false;
+        var assertions = [name];
+        for(var i = 0; i < errors.warnings.length; i++){
+          var warning = errors.warnings[i];
+          var warningMessage = 'line: ' + warning.line + ', col: ' + warning.column + ' ' + warning.text + '.';
+          assertions.push(this.escapeErrorString(warningMessage));
         }
-
-        return project.generateTestFile(' Style Lint ', [{
-          name: name,
-          passed: !!passed,
-          errorMessage: errors
-        }]);
-      };
-
-      var toBeLinted = [ this.app.trees.app ];
-      if (this.styleLintOptions.includePaths) {
-        toBeLinted.push.apply(toBeLinted, this.styleLintOptions.includePaths);
+        errors = assertions.join('\\n');
+      } else {
+        passed = true;
+        errors = '';
       }
 
-      var linted = toBeLinted.map(function(tree) {
-        return new StyleLinter(tree, this.styleLintOptions);
-      }, this);
+      return project.generateTestFile(' Style Lint ', [{
+        name: name,
+        passed: !!passed,
+        errorMessage: errors
+      }]);
+    };
 
-      return mergeTrees(linted);
-    } else {
-      return tree;
+    var toBeLinted = [ this.app.trees.styles ];
+    if (this.styleLintOptions.includePaths) {
+      toBeLinted.push.apply(toBeLinted, this.styleLintOptions.includePaths);
     }
+    var linted = toBeLinted.map(function(tree) {
+      return new StyleLinter(tree, this.styleLintOptions);
+    }, this);
+    return mergeTrees(linted);
   }
 };
