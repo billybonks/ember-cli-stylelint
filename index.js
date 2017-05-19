@@ -26,12 +26,13 @@ module.exports = {
         var assertions = [name];
         for(var i = 0; i < errors.warnings.length; i++){
           var warning = errors.warnings[i];
-          assertions.push(this.escapeErrorString('line: '+warning.line+', col: '+warning.column+' '+warning.text+'.'));
+          var warningMessage = 'line: ' + warning.line + ', col: ' + warning.column + ' ' + warning.text + '.';
+          assertions.push(this.escapeErrorString(warningMessage));
         }
         errors = assertions.join('\\n');
       } else {
         passed = true;
-        errors = "";
+        errors = '';
       }
 
       return project.generateTestFile(' Style Lint ', [{
