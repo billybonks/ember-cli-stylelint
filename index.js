@@ -77,8 +77,6 @@ module.exports = {
       }, this);
 
       return mergeTrees(linted);
-    } else {
-      return tree;
     }
   }
 };
