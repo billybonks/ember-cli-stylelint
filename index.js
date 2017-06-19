@@ -3,6 +3,7 @@
 
 var mergeTrees = require('broccoli-merge-trees');
 var StyleLinter = require('broccoli-stylelint');
+var Funnel = require('broccoli-funnel');
 
 module.exports = {
   name: 'ember-cli-stylelint',
@@ -73,7 +74,10 @@ module.exports = {
       }
 
       var linted = toBeLinted.map(function(tree) {
-        return new StyleLinter(tree, this.styleLintOptions);
+        var filteredTreeToBeLinted = new Funnel(tree, { 
+          exclude: ['**/*.js']
+        });
+        return new StyleLinter(filteredTreeToBeLinted, this.styleLintOptions);
       }, this);
 
       return mergeTrees(linted);
