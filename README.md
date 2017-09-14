@@ -66,7 +66,7 @@ If true it will generate a unit test if the file fails lint.
 
 `testPassingFiles` {boolean}
 
-If true it  will generate a unit test if the passes fails lint.
+If true it will generate a unit test if the file passes lint.
 
 `generateTests` {boolean}
 
