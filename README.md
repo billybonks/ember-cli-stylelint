@@ -90,7 +90,8 @@ can set `includePaths: [ 'app/styles' ]` to also lint styles in `app/styles/`.
 
 All tests are currently contained in tests/runner.js. This uses Mocha/Chai, not Ember Testing. Tests can be run with:
 
-npm test
-You should also check that the dummy app's styles are still correctly compiled by running the ember app using ember s.
+`npm test`
+
+You should also check that the dummy app's styles are still correctly compiled by running the ember app using `ember server`.
 
 PRs are welcomed and should be issued to the master branch.
