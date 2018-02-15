@@ -9,7 +9,8 @@
 
 An Ember-CLI addon that allows easy integration with [stylelint](http://stylelint.io/)
 
-## Installation
+Installation
+------------------------------------------------------------------------------
 
 `ember install ember-cli-stylelint`
 
@@ -82,7 +83,7 @@ Paths representing trees to lint. The app tree itself will always be included.
 In an addon, that path is `tests/dummy/app/styles/` (by default). Addon authors
 can set `includePaths: [ 'app/styles' ]` to also lint styles in `app/styles/`.
 
-## Running Tests
+### Running tests
 
 * `npm test`
 
