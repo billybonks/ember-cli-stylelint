@@ -3,6 +3,7 @@
 var mergeTrees = require('broccoli-merge-trees');
 var StyleLinter = require('broccoli-stylelint');
 var Funnel = require('broccoli-funnel');
+const escapeString = require('js-string-escape');
 
 module.exports = {
   name: 'ember-cli-stylelint',
@@ -52,7 +53,7 @@ module.exports = {
           var assertions = [name];
           for(var i = 0; i < errors.warnings.length; i++){
             var warning = errors.warnings[i];
-            assertions.push(this.escapeErrorString('line: '+warning.line+', col: '+warning.column+' '+warning.text+'.'));
+            assertions.push(escapeString('line: '+warning.line+', col: '+warning.column+' '+warning.text+'.'));
           }
           errors = assertions.join('\\n');
         } else {
@@ -73,7 +74,7 @@ module.exports = {
       }
 
       var linted = toBeLinted.map(function(tree) {
-        var filteredTreeToBeLinted = new Funnel(tree, { 
+        var filteredTreeToBeLinted = new Funnel(tree, {
           exclude: ['**/*.js']
         });
         return new StyleLinter(filteredTreeToBeLinted, this.styleLintOptions);
