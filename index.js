@@ -77,7 +77,7 @@ module.exports = {
         var filteredTreeToBeLinted = new Funnel(tree, {
           exclude: ['**/*.js']
         });
-        return new StyleLinter(filteredTreeToBeLinted, this.styleLintOptions);
+        return StyleLinter.create(filteredTreeToBeLinted, this.styleLintOptions)
       }, this);
 
       return mergeTrees(linted);
