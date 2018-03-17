@@ -70,7 +70,7 @@
   "dependencies": {
     "broccoli-funnel": "^1.1.0",
     "broccoli-merge-trees": "^1.2.1",
-    "broccoli-stylelint": "^1.4.0",
+    "broccoli-stylelint": "^2.0.0",
     "ember-cli-babel": "^6.7.1",
     "js-string-escape": "^1.0.1"
   },
