@@ -28,7 +28,7 @@
   "devDependencies": {
     "broccoli": "^0.16.9",
     "broccoli-asset-rev": "^2.4.5",
-    "chai": "^3.5.0",
+    "chai": "^4.1.2",
     "ember-cli": "~3.0.1",
     "ember-cli-babel": "^6.7.1",
     "ember-cli-content-security-policy": "^0.4.0",
