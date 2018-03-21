@@ -72,6 +72,7 @@
     "broccoli-merge-trees": "^1.2.1",
     "broccoli-stylelint": "^2.0.0",
     "ember-cli-babel": "^6.7.1",
+    "ember-cli-version-checker": "^2.1.0",
     "js-string-escape": "^1.0.1"
   },
   "ember-addon": {
