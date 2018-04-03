@@ -54,9 +54,8 @@ module.exports = {
     this.app = app;
   },
 
-  lintTree(type) {
-
-    if (type === 'app') {
+  lintTree() {
+    if (!this.linted) {
       this.styleLintOptions.testingFramework = this._testGenerator;
 
       let toBeLinted = [ this.app.trees.app ];
@@ -70,7 +69,7 @@ module.exports = {
         });
         return StyleLinter.create(filteredTreeToBeLinted, this.styleLintOptions)
       }, this);
-
+      this.linted = true;
       return mergeTrees(linted);
     }
   }

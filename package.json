@@ -14,10 +14,10 @@
     "build": "ember build",
     "lint:js": "eslint ./*.js addon addon-test-support app config lib server test-support tests",
     "start": "ember serve",
-    "test": "mocha tests/runner"
+    "test": "mocha node-tests"
   },
   "engines": {
-    "node": "^4.5 || 6.* || >= 7.*"
+    "node": "6.* || >= 7.*"
   },
   "author": {
     "name": "billybonks",
@@ -73,6 +73,7 @@
     "broccoli-merge-trees": "^1.2.1",
     "broccoli-stylelint": "^2.0.0",
     "ember-cli-version-checker": "^2.1.0",
+    "fs-extra": "^5.0.0",
     "js-string-escape": "^1.0.1"
   },
   "ember-addon": {
