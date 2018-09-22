@@ -88,7 +88,7 @@ describe('ember-cli-stylelint', function() {
         return emberTest().then( result => {
           expect(result.error).to.not.exist;
           expect(result.stdout.match(/[^\r\n]+/g))
-            .to.contain('ok 1 Chrome 65.0 - Stylelint: styles/app.scss should pass stylelint');
+            .to.contain('ok 1 Chrome 69.0 - Stylelint: styles/app.scss should pass stylelint');
         });
       });
 
@@ -97,8 +97,8 @@ describe('ember-cli-stylelint', function() {
         return emberTest().then( result => {
           expect(result.error).to.exist;
           expect(result.stdout.match(/[^\r\n]+/g))
-            .to.contain('not ok 1 Chrome 65.0 - Stylelint: public/bad.scss should pass stylelint')
-            .to.contain('ok 2 Chrome 65.0 - Stylelint: styles/app.scss should pass stylelint')
+            .to.contain('not ok 1 Chrome 69.0 - Stylelint: public/bad.scss should pass stylelint')
+            .to.contain('ok 2 Chrome 69.0 - Stylelint: styles/app.scss should pass stylelint')
         });
       });
     });
