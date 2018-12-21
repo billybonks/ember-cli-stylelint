@@ -70,7 +70,7 @@
     "css-lint"
   ],
   "dependencies": {
-    "broccoli-funnel": "^1.1.0",
+    "broccoli-funnel": "^2.0.1",
     "broccoli-merge-trees": "^1.2.1",
     "broccoli-stylelint": "~2.3.0",
     "ember-cli-version-checker": "^2.1.0",
