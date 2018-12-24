@@ -23,6 +23,13 @@ function emberBuild() {
   return emberCommand('build');
 }
 
+function sanetizeResult(result) {
+  let start = result.indexOf('Chrome') - 2
+  let end = result.indexOf(']') + 4
+  let match = result.substring(start, end);
+  return result.replace(match,'')
+}
+
 var FAILING_FILE = __dirname + '/../tests/dummy/app/public/bad.scss';
 
 function writeBadFile(){
@@ -87,8 +94,8 @@ describe('ember-cli-stylelint', function() {
       it(`Passes if stylelint passes`, () => {
         return emberTest().then( result => {
           expect(result.error).to.not.exist;
-          expect(result.stdout.match(/[^\r\n]+/g))
-            .to.contain('ok 1 Chrome 69.0 - Stylelint: styles/app.scss should pass stylelint');
+          expect(result.stdout.match(/[^\r\n]+/g).map(sanetizeResult))
+          .to.contain('ok Stylelint: styles/app.scss should pass stylelint');
         });
       });
 
@@ -96,9 +103,9 @@ describe('ember-cli-stylelint', function() {
         writeBadFile();
         return emberTest().then( result => {
           expect(result.error).to.exist;
-          expect(result.stdout.match(/[^\r\n]+/g))
-            .to.contain('not ok 1 Chrome 69.0 - Stylelint: public/bad.scss should pass stylelint')
-            .to.contain('ok 2 Chrome 69.0 - Stylelint: styles/app.scss should pass stylelint')
+          expect(result.stdout.match(/[^\r\n]+/g).map(sanetizeResult))
+          .to.contain('not ok Stylelint: public/bad.scss should pass stylelint')
+          .to.contain('ok Stylelint: styles/app.scss should pass stylelint')
         });
       });
     });
