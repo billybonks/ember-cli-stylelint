@@ -3,7 +3,6 @@
 let mergeTrees = require('broccoli-merge-trees');
 let StyleLinter = require('broccoli-stylelint');
 let Funnel = require('broccoli-funnel');
-const escapeString = require('js-string-escape');
 
 module.exports = {
   name: 'ember-cli-stylelint',
