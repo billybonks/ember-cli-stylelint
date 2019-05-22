@@ -4,7 +4,7 @@
   "description": "StyleLint addon for ember applications.",
   "scripts": {
     "build": "ember build",
-    "lint:js": "eslint ./*.js addon addon-test-support app config lib server test-support tests",
+    "lint:js": "eslint ./*.js blueprints config tests",
     "start": "ember serve",
     "test": "mocha node-tests"
   },
