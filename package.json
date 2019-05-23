@@ -4,7 +4,7 @@
   "description": "StyleLint addon for ember applications.",
   "scripts": {
     "build": "ember build",
-    "lint:js": "eslint ./*.js addon addon-test-support app config lib server test-support tests",
+    "lint:js": "eslint ./*.js blueprints config tests",
     "start": "ember serve",
     "test": "mocha node-tests"
   },
@@ -20,7 +20,7 @@
     "ember-cli-babel": "^7.1.2",
     "ember-cli-content-security-policy": "^1.0.0",
     "ember-cli-dependency-checker": "^3.0.0",
-    "ember-cli-eslint": "^4.2.3",
+    "ember-cli-eslint": "^5.1.0",
     "ember-cli-htmlbars": "^3.0.0",
     "ember-cli-htmlbars-inline-precompile": "^2.1.0",
     "ember-cli-inject-live-reload": "^2.0.1",
