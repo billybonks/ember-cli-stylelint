@@ -4,6 +4,8 @@
 [![downloads](https://img.shields.io/npm/dm/ember-cli-stylelint.svg)](https://www.npmjs.com/package/ember-cli-stylelint)
 [![build](https://travis-ci.org/billybonks/ember-cli-stylelint.svg?branch=master)](https://travis-ci.org/billybonks/ember-cli-stylelint/branches)
 
+Installation
+------------------------------------------------------------------------------
 
 # ember-cli-stylelint
 
@@ -92,6 +94,13 @@ All tests are currently contained in tests/runner.js. This uses Mocha/Chai, not 
 
 `npm test`
 
-You should also check that the dummy app's styles are still correctly compiled by running the ember app using `ember server`.
+Contributing
+------------------------------------------------------------------------------
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
+
+License
+------------------------------------------------------------------------------
 
 PRs are welcomed and should be issued to the master branch.
