@@ -31,7 +31,7 @@ function sanetizeResult(result) {
 }
 
 var FAILING_FILE = __dirname + '/../tests/dummy/app/public/bad.scss';
-
+var FAILING_CSS_FILE = __dirname + '/../tests/dummy/app/public/bad.css';
 function writeBadFile(){
   fs.outputFileSync(FAILING_FILE, `
 .should-error {
@@ -47,17 +47,33 @@ function writeBadFile(){
 }
 `);
 }
+
+function writeBadFileCss() {
+  fs.outputFileSync(FAILING_CSS_FILE, `
+.color.must.be.named {
+  color: #000000
+}
+.should-error {
+
+}
+#should-be-allowed-by-sass-lint-test-config-yml {
+  color: green;
+}
+`);
+}
 describe('ember-cli-stylelint', function() {
   this.timeout(60000);
 
   afterEach(function() {
     fs.removeSync(FAILING_FILE);
+    fs.removeSync(FAILING_CSS_FILE);
   });
 
   describe('ember build output', () => {
 
     beforeEach(function(){
       writeBadFile();
+      writeBadFileCss();
     })
 
     it(`doesn't build twice`, () => {
@@ -73,6 +89,9 @@ describe('ember-cli-stylelint', function() {
       return emberBuild().then( result => {
         expect(result.error).to.not.exist;
         expect(result.stdout.match(/[^\r\n]+/g))
+          .to.contain('tests/dummy/app/public/bad.css')
+          .to.contain(' 3:10  ✖  Expected "#000000" to be "black"   color-named   ')
+          .to.contain(' 5:15  ✖  Unexpected empty block             block-no-empty')
           .to.contain('tests/dummy/app/public/bad.scss')
           .to.contain(' 2:15  ✖  Unexpected empty block             block-no-empty')
           .to.contain(' 7:10  ✖  Expected "#000000" to be "black"   color-named')
