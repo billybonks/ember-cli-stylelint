@@ -56,7 +56,7 @@ module.exports = {
   lintTree() {
     if (!this.linted) {
       this.styleLintOptions.testingFramework = this._testGenerator;
-
+      this.styleLintOptions.group = true;
       let toBeLinted = [ this.app.trees.app ];
       if (this.styleLintOptions.includePaths) {
         toBeLinted.push.apply(toBeLinted, this.styleLintOptions.includePaths);
