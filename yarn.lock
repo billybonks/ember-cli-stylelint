@@ -2254,10 +2254,10 @@ broccoli-stew@^2.1.0:
     symlink-or-copy "^1.2.0"
     walk-sync "^0.3.3"
 
-broccoli-stylelint@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/broccoli-stylelint/-/broccoli-stylelint-3.0.0.tgz#6fec906f794959f2e6b84c02f8fcb57d3bb58bef"
-  integrity sha512-NoVx/V6eSFsxzTlFX2w20Uf8m4lDk9T+zj/frmWaMy/xKFEOj8wYu0UnP6w99sYKKJPmRXeJv286SnN20+GgoA==
+broccoli-stylelint@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/broccoli-stylelint/-/broccoli-stylelint-3.0.1.tgz#47bdca8e7d00e01661c0f55ceb2a404c8ba50d46"
+  integrity sha512-opkFJesgMwxK7yoUYmt4Mwnf23WmlGw1yzGpbiZJrQsUYza0smgbnv+iCaKEOpbVphlzmI5iZSfgiAwH1NJNzg==
   dependencies:
     aot-test-generators "^0.1.0"
     broccoli-concat "^3.2.2"
