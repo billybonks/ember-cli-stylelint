@@ -16,10 +16,13 @@ An Ember-CLI addon that allows easy integration with [stylelint](http://stylelin
 `ember install ember-cli-stylelint`
 
 ## Syntax
-By default syntax is `scss`, if you want to use another one you need to configure the option in your `ember-cli-build`
+
+**Non-standard syntaxes will be automatically inferred from file extensions.**
+
+To force a specific syntax configure the option in your `ember-cli-build`:
 
 ```javascript
-var app = new EmberApp(defaults, {
+let app = new EmberApp(defaults, {
   stylelint: {
     linterConfig:{
       syntax: 'less'
@@ -28,11 +31,9 @@ var app = new EmberApp(defaults, {
 });
 ```
 
-You can use one of the following values for `syntax`
-- scss
-- css
-- less
-- sugarss
+You can use one of the following values for `syntax`:
+
+`'css-in-js'|'html'|'less'|'markdown'|'sass'|'scss'|'sugarss'`
 
 ## Configuration
 
