@@ -2254,7 +2254,7 @@ broccoli-stew@^2.1.0:
     symlink-or-copy "^1.2.0"
     walk-sync "^0.3.3"
 
-broccoli-stylelint@^3.0.1:
+broccoli-stylelint@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/broccoli-stylelint/-/broccoli-stylelint-3.0.2.tgz#d42a00e39c28fe9c61cadb61f56f7c8df07b4018"
   integrity sha512-bkUaBiTe0eIGBbx/GPGMJb19sx1QOdl2uTBac6Hj6jNgeWrcWKtRHv1x0cvPgOKVOeAw0k5Ri92LoIbHC3V7nw==
