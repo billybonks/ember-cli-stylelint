@@ -41,7 +41,7 @@
     "fs-extra": "^8.0.1",
     "loader.js": "^4.7.0",
     "mocha": "^6.1.4",
-    "qunit-dom": "^0.9.0"
+    "qunit-dom": "^1.0.0"
   },
   "keywords": [
     "ember-addon",
