@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-stylelint",
-  "version": "3.0.2",
+  "version": "4.0.0",
   "description": "StyleLint addon for ember applications.",
   "scripts": {
     "build": "ember build",
