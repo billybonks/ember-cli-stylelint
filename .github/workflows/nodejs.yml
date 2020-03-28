@@ -17,14 +17,25 @@ jobs:
     strategy:
       matrix:
         node-version: [10.x, 12.x, 13.x]
-
+        ember-version:
+          - release
+          - beta
+          - canary
+          - lts-3.4
+          - lts-3.8
+          - lts-3.12
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: yarn install
-    - run: yarn test
-      env:
-        CI: true
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Setup ember-try scenario
+        run: yarn ember try:one ember-${{ matrix.ember-version }} --skip-cleanup --- cat package.json
+      - name: Install dependencies (yarn)
+        run: yarn install
+      - name: Lint (js)
+        run: yarn lint:js
+      - run: yarn test
+        env:
+          CI: true
