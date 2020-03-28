@@ -74,7 +74,7 @@
   "dependencies": {
     "broccoli-funnel": "^3.0.2",
     "broccoli-merge-trees": "^4.1.0",
-    "broccoli-stylelint": "^3.0.2",
+    "broccoli-stylelint": "^4.0.0",
     "ember-cli-version-checker": "^5.0.2",
     "js-string-escape": "^1.0.1"
   },
