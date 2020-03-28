@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 13.x]
+        node-version: [10.x, 12.x]
         ember-version:
           - release
           - beta
@@ -24,6 +24,7 @@ jobs:
           - lts-3.4
           - lts-3.8
           - lts-3.12
+          - lts-3.16
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
