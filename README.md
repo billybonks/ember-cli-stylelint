@@ -4,12 +4,19 @@
 [![downloads](https://img.shields.io/npm/dm/ember-cli-stylelint.svg)](https://www.npmjs.com/package/ember-cli-stylelint)
 [![build](https://travis-ci.org/billybonks/ember-cli-stylelint.svg?branch=master)](https://travis-ci.org/billybonks/ember-cli-stylelint/branches)
 
-Installation
-------------------------------------------------------------------------------
-
 # ember-cli-stylelint
 
 An Ember-CLI addon that allows easy integration with [stylelint](http://stylelint.io/)
+
+## 🔴 DEPRECATED 🔴
+
+Please use [stylelint](https://github.com/stylelint/stylelint) directly instead.
+
+More info / background:
+
+* https://github.com/ember-cli/rfcs/pull/121
+* https://github.com/emberjs/rfcs/blob/master/text/0121-remove-ember-cli-eslint.md
+* https://github.com/ember-cli/ember-cli/pull/9009
 
 ## Installation
 
